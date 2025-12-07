@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ace Radio - Listen Live</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="__variable_9018ec">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 256 256" style="display: block;">
+                <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+            </svg>
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 256 256" style="display: none;">
+                <path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"></path>
+            </svg>
+        </button>
+        <div class="mobile-logo">
+            <img src="assets/images/ArcRadio_Logo.svg" alt="Ace Radio">
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-logo">
+            <img src="assets/images/ArcRadio_Logo.svg" alt="Ace Radio">
+        </div>
+        <nav class="mobile-navigation">
+            <a href="#" class="mobile-nav-link active" data-page="home">Home</a>
+            <a href="#" class="mobile-nav-link" data-page="shows">Our Shows</a>
+            <a href="#" class="mobile-nav-link" data-page="about">About</a>
+            <a href="#" class="mobile-nav-link" data-page="contact">Contact</a>
+        </nav>
+    </div>
+
+    <div class="page-root">
+        <div class="page-wrapper">
+            <div class="page-container">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="assets/images/ArcRadio_Logo.svg" alt="Ace Radio" width="200" height="50">
+                    </div>
+                    <nav class="navigation">
+                        <a href="#" class="nav-link active" data-page="home">Home</a>
+                        <a href="#" class="nav-link" data-page="shows">Our Shows</a>
+                        <a href="#" class="nav-link" data-page="about">About</a>
+                        <a href="#" class="nav-link" data-page="contact">Contact</a>
+                    </nav>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main">
+                    <!-- Home Page -->
+                    <div class="page-content" id="page-home">
+                        <!-- Image Slider -->
+                        <div class="slider-container">
+                            <div class="slider">
+                                <div class="slides-wrapper" id="slidesWrapper">
+                                    <div class="slide"><img src="assets/images/sliders/arc-top-20.png" alt="Arc Top 20">
+                                    </div>
+                                    <div class="slide"><img src="assets/images/sliders/arc-mornings.png"
+                                            alt="Arc Mornings"></div>
+                                    <div class="slide"><img src="assets/images/sliders/rush-hour.png" alt="Rush Hour">
+                                    </div>
+                                    <div class="slide"><img src="assets/images/sliders/rock-solid.png" alt="Rock Solid">
+                                    </div>
+                                    <div class="slide"><img src="assets/images/sliders/rnb-after-dark.png"
+                                            alt="R&B After Dark"></div>
+                                    <div class="slide"><img src="assets/images/sliders/jam-expo.png" alt="Jam Expo">
+                                    </div>
+                                    <div class="slide"><img src="assets/images/sliders/rewind.png" alt="Rewind"></div>
+                                    <div class="slide"><img src="assets/images/sliders/smooth-sundays.png"
+                                            alt="Smooth Sundays"></div>
+                                    <div class="slide"><img src="assets/images/sliders/club-ace.png" alt="Club Ace">
+                                    </div>
+                                    <div class="slide"><img src="assets/images/sliders/flow-show-slider.png"
+                                            alt="Flow Show"></div>
+                                </div>
+                                <button class="nav-button nav-button-left" id="prevSlide" aria-label="Previous slide">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="rgba(255, 255, 255, 0.7)" viewBox="0 0 256 256">
+                                        <path
+                                            d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <button class="nav-button nav-button-right" id="nextSlide" aria-label="Next slide">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="rgba(255, 255, 255, 0.7)" viewBox="0 0 256 256">
+                                        <path
+                                            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="slider-indicators" id="indicators"></div>
+                        </div>
+
+                        <!-- Our Shows Section -->
+                        <div class="shows-section">
+                            <h2>Our Shows</h2>
+                            <div class="shows-wrapper">
+                                <div class="shows-container" id="showsContainer">
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/arc-mornings.jpg" alt="Ace Mornings">
+                                        </div>
+                                        <h3>Ace Mornings</h3>
+                                        <p class="host">Christopher Marshall</p>
+                                        <p class="schedule">Weekdays, 06:00 to 09:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/show-placeholder.jpg" alt="The Midday Mix">
+                                        </div>
+                                        <h3>The Midday Mix</h3>
+                                        <p class="host">Ace Radio Team</p>
+                                        <p class="schedule">Weekdays, 12:00 to 15:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/the-rush-hour.jpg" alt="The Rush Hour">
+                                        </div>
+                                        <h3>The Rush Hour</h3>
+                                        <p class="host">Mel Massyn</p>
+                                        <p class="schedule">Weekdays, 15:00 to 18:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/rock-solid.jpg" alt="Rock Solid">
+                                        </div>
+                                        <h3>Rock Solid</h3>
+                                        <p class="host">Neil Boltman</p>
+                                        <p class="schedule">Tuesday, 18:00 to 21:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/rnb-after-dark.jpg" alt="R&B After Dark">
+                                        </div>
+                                        <h3>R&B After Dark</h3>
+                                        <p class="host">Ryan Thomas</p>
+                                        <p class="schedule">Monday, 18:00 to 21:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/jam-expo.jpg" alt="Jam Expo">
+                                        </div>
+                                        <h3>Jam Expo</h3>
+                                        <p class="host">DJ Mamba</p>
+                                        <p class="schedule">Wednesday, 18:00 to 21:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/rewind.jpg" alt="Rewind">
+                                        </div>
+                                        <h3>Rewind</h3>
+                                        <p class="host">Ryan Thomas</p>
+                                        <p class="schedule">Thursday, 18:00 to 21:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/club-ace.jpg" alt="Club Ace">
+                                        </div>
+                                        <h3>Club Ace</h3>
+                                        <p class="host">Benna October</p>
+                                        <p class="schedule">Friday, 18:00 to 22:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/arc-top-20.jpg" alt="Ace Top 20">
+                                        </div>
+                                        <h3>Ace Top 20</h3>
+                                        <p class="host">Christopher Marshall</p>
+                                        <p class="schedule">Saturday, 09:00 to 12:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/smooth-sundays.jpg" alt="Smooth Sundays">
+                                        </div>
+                                        <h3>Smooth Sundays</h3>
+                                        <p class="host">Benna October</p>
+                                        <p class="schedule">Sunday, 10:00 to 14:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/show-placeholder.jpg" alt="Sunset Sessions">
+                                        </div>
+                                        <h3>Sunset Sessions</h3>
+                                        <p class="host">Ace Radio Team</p>
+                                        <p class="schedule">Sunday, 14:00 to 17:00</p>
+                                    </div>
+                                    <div class="show-card">
+                                        <div class="show-card-cover">
+                                            <img src="assets/images/shows/flow-show.png" alt="Flow Show">
+                                        </div>
+                                        <h3>Flow Show</h3>
+                                        <p class="host">Ace Radio Team</p>
+                                        <p class="schedule">Weekdays, 09:00 to 12:00</p>
+                                    </div>
+                                </div>
+                                <div class="shows-nav-buttons">
+                                    <button class="shows-nav-button shows-nav-button-left" id="prevShow"
+                                        aria-label="Previous shows">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="rgba(255, 255, 255, 0.7)" viewBox="0 0 256 256">
+                                            <path
+                                                d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <button class="shows-nav-button shows-nav-button-right" id="nextShow"
+                                        aria-label="Next shows">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="rgba(255, 255, 255, 0.7)" viewBox="0 0 256 256">
+                                            <path
+                                                d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/ace.radio" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Instagram" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Facebook" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on TikTok" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/aceradioza" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on X" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- About Page -->
+                    <div class="page-content" id="page-about" style="display: none;">
+
+                        <div style="margin-bottom: 40px; text-align: center;border-radius: 8px;">
+                            <img src="assets/images/about-picture.png" alt="ace.radio"
+                                style="max-width: 100%; height: auto;;border-radius: 8px;">
+                        </div>
+                        <h2>About</h2>
+                        <div style="max-width: 800px; line-height: 1.8; color: #b3b3b3;">
+                            <p style="margin-bottom: 15px;margin-top: 15px;">
+                                ace.radio is more than a station. It's a vision brought to life.
+                            </p>
+                            <p style="margin-bottom: 15px;">
+                                Founded by <strong style="text-decoration: underline;">Luke Henwood</strong> and <strong
+                                    style="text-decoration: underline;">Christopher Marshall</strong>, the idea was born
+                                in July 2025 and officially launched just 60 days later, from start of build, on the 3rd
+                                of October 2025. With a driven and highly motivated team, <strong
+                                    style="text-decoration: underline;">ace.radio</strong> was built from the ground up
+                                to reimagine what radio could be in the digital age.
+                            </p>
+                            <p style="margin-bottom: 15px;">
+                                Unlike traditional platforms, <strong
+                                    style="text-decoration: underline;">ace.radio</strong> gives South Africans free
+                                streaming without using your personal data. No limits. No barriers. Just music,
+                                entertainment and connection – wherever you are.
+                            </p>
+                            <p style="margin-bottom: 15px;">
+                                From our state-of-the-art studios in Century City, Cape Town, we deliver a curated mix
+                                of artists, songs, and original shows every single day. Our professional presenters
+                                bring energy, humour and insight, keeping our audience informed and entertained.
+                            </p>
+                            <p style="margin-bottom: 15px;">
+                                For advertisers, <strong style="text-decoration: underline;">ace.radio</strong> is more
+                                than airtime – it's precision. With real-time analytics, targeted campaigns, and
+                                transparent reporting, we put your brand directly in front of the right consumers, at
+                                the right time.
+                            </p>
+                            <p>
+                                <strong style="text-decoration: underline;">ace.radio</strong>: Built for those who
+                                listen differently
+                            </p>
+                        </div>
+                        <!-- Social Media Links -->
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/ace.radio" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Instagram" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Facebook" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on TikTok" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/aceradioza" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on X" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Our Shows Page -->
+                    <div class="page-content" id="page-shows" style="display: none;">
+                        <h2>Our Shows</h2>
+                        <div class="shows-grid" id="showsGrid">
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/arc-mornings.jpg" alt="Ace Mornings">
+                                </div>
+                                <h3>Ace Mornings</h3>
+                                <p class="host">Debbie Boltman</p>
+                                <p class="schedule">Weekdays, 06:00 to 09:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/show-placeholder.jpg" alt="The Midday Mix">
+                                </div>
+                                <h3>The Midday Mix</h3>
+                                <p class="host">Ace Radio Team</p>
+                                <p class="schedule">Weekdays, 12:00 to 15:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/the-rush-hour.jpg" alt="The Rush Hour">
+                                </div>
+                                <h3>The Rush Hour</h3>
+                                <p class="host">Mel Massyn</p>
+                                <p class="schedule">Weekdays, 15:00 to 18:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/rock-solid.jpg" alt="Rock Solid">
+                                </div>
+                                <h3>Rock Solid</h3>
+                                <p class="host">Neil Boltman</p>
+                                <p class="schedule">Tuesday, 18:00 to 21:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/rnb-after-dark.jpg" alt="R&B After Dark">
+                                </div>
+                                <h3>R&B After Dark</h3>
+                                <p class="host">Ryan Thomas</p>
+                                <p class="schedule">Monday, 18:00 to 21:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/jam-expo.jpg" alt="Jam Expo">
+                                </div>
+                                <h3>Jam Expo</h3>
+                                <p class="host">DJ Mamba</p>
+                                <p class="schedule">Wednesday, 18:00 to 21:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/rewind.jpg" alt="Rewind">
+                                </div>
+                                <h3>Rewind</h3>
+                                <p class="host">Ryan Thomas</p>
+                                <p class="schedule">Thursday, 18:00 to 21:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/club-ace.jpg" alt="Club Ace">
+                                </div>
+                                <h3>Club Ace</h3>
+                                <p class="host">Benna October</p>
+                                <p class="schedule">Friday, 18:00 to 22:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/arc-top-20.jpg" alt="Ace Top 20">
+                                </div>
+                                <h3>Ace Top 20</h3>
+                                <p class="host">Hanan Abrahams</p>
+                                <p class="schedule">Saturday, 09:00 to 12:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/smooth-sundays.jpg" alt="Smooth Sundays">
+                                </div>
+                                <h3>Smooth Sundays</h3>
+                                <p class="host">Benna October</p>
+                                <p class="schedule">Sunday, 10:00 to 14:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/show-placeholder.jpg" alt="Sunset Sessions">
+                                </div>
+                                <h3>Sunset Sessions</h3>
+                                <p class="host">Ace Radio Team</p>
+                                <p class="schedule">Sunday, 14:00 to 17:00</p>
+                            </div>
+                            <div class="show-card">
+                                <div class="show-card-cover">
+                                    <img src="assets/images/shows/flow-show.png" alt="Flow Show">
+                                </div>
+                                <h3>Flow Show</h3>
+                                <p class="host">Ace Radio Team</p>
+                                <p class="schedule">Weekdays, 09:00 to 12:00</p>
+                            </div>
+                        </div>
+                        <!-- Social Media Links -->
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/ace.radio" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Instagram" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Facebook" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on TikTok" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/aceradioza" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on X" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Contact Page -->
+                    <div class="page-content" id="page-contact" style="display: none;">
+                        <h2>Contact Us</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" placeholder="Enter your message" rows="5"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                        <!-- Social Media Links -->
+                        <div class="social-links" style="margin-top: 60px;">
+                            <a href="https://www.instagram.com/ace.radio" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Instagram" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on Facebook" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@ace.radio.za" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on TikTok" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/aceradioza" target="_blank" rel="noopener noreferrer"
+                                aria-label="Follow us on X" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <!-- Footer with Player -->
+            <div class="footer">
+                <div class="player-container">
+                    <div class="pause-play-button-container" id="playPauseBtn">
+                        <div class="loader" id="loader"></div>
+                        <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000"
+                            viewBox="0 0 256 256" style="display: block;">
+                            <path
+                                d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z">
+                            </path>
+                        </svg>
+                        <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000"
+                            viewBox="0 0 256 256" style="display: none;">
+                            <path
+                                d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="listen-live-text">Listen Live</span>
+                </div>
+                <div class="whatsapp-button">
+                    <svg width="20" height="20" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_7_5)">
+                            <path
+                                d="M26.99 22.0566L26.9761 22.1722C23.586 20.4826 23.2314 20.2575 22.7936 20.9142C22.4899 21.369 21.6049 22.4004 21.3382 22.7056C21.0684 23.0063 20.8002 23.0294 20.3423 22.8213C19.8798 22.59 18.3952 22.1044 16.6377 20.5319C15.2687 19.3063 14.3499 17.8031 14.0785 17.3406C13.6268 16.5606 14.5719 16.4496 15.4321 14.8216C15.5863 14.4978 15.5077 14.2434 15.3936 14.0137C15.2779 13.7825 14.3576 11.5162 13.9722 10.6128C13.6022 9.71248 13.2214 9.82656 12.9362 9.82656C12.0482 9.74948 11.3991 9.76181 10.8272 10.3569C8.3389 13.0918 8.96636 15.9131 11.0954 18.9131C15.2795 24.3891 17.5087 25.3974 21.5849 26.7972C22.6857 27.1472 23.6893 27.0979 24.4832 26.9838C25.3682 26.8435 27.2074 25.8722 27.5912 24.7853C27.9844 23.6985 27.9844 22.7966 27.8687 22.5885C27.7547 22.3804 27.4525 22.2647 26.99 22.0566Z"
+                                fill="white"></path>
+                            <path
+                                d="M31.635 5.31727C19.7811 -6.14194 0.163417 2.16918 0.155708 18.3351C0.155708 21.5664 1.00208 24.7176 2.61467 27.5003L0 37.0001L9.76646 34.4532C21.9533 41.0361 36.9938 32.2949 37 18.3443C37 13.448 35.0883 8.83997 31.6119 5.37739L31.635 5.31727ZM33.9198 18.2935C33.9105 30.061 20.9929 37.4101 10.7762 31.4038L10.2212 31.0739L4.44 32.577L5.98937 26.9576L5.62092 26.3795C-0.736917 16.2585 6.5675 3.03097 18.611 3.03097C20.6222 3.02591 22.6144 3.41982 24.4724 4.18989C26.3303 4.95995 28.0171 6.09089 29.435 7.51722C30.8607 8.92566 31.9915 10.604 32.7615 12.4542C33.5315 14.3044 33.9253 16.2894 33.9198 18.2935Z"
+                                fill="white"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_7_5">
+                                <rect width="37" height="37" fill="white"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="whatsapp-text">WhatsApp</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer" preload="none"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
