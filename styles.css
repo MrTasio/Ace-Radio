@@ -673,7 +673,6 @@ picture {
     display: flex;
     justify-content: space-between;
     background-color: #000;
-    border-top: 1px solid #1a1a1a;
     bottom: 0;
     left: 0;
     right: 0;
