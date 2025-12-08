@@ -10,7 +10,19 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <!-- Vercel Web Analytics -->
-    <script defer src="https://cdn.vercel-analytics.com/v1/script.js"></script>
+    <script>
+        // Only load analytics in production (not on localhost)
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.hostname.startsWith('192.168.')) {
+            const script = document.createElement('script');
+            script.defer = true;
+            script.src = 'https://cdn.vercel-analytics.com/v1/script.js';
+            script.onerror = function() {
+                // Silently fail if blocked by ad blocker or network issue
+                console.warn('Analytics script could not be loaded');
+            };
+            document.head.appendChild(script);
+        }
+    </script>
 </head>
 
 <body class="__variable_9018ec">
